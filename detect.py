@@ -57,13 +57,10 @@ class Detector(ABC):
         #    fill=color + (opacity,),
         # )
 
-        if data:
-            font = ImageFont.truetype(
-                "Montserrat-Regular.ttf", 10
-            )  # TODO load font in ctr
-            text_width, text_height = font.getsize(data)
+        if data and self._font:
+            text_width, text_height = self._font.getsize(data)
             draw.rectangle(((0, 0), (text_width, text_height)), fill=color + (opacity,))
-            draw.text((0, 0), text=data, fill="white", font=font)
+            draw.text((0, 0), text=data, fill="white", font=self._font)
 
         img = Image.alpha_composite(img, mask)
         return img.convert("RGB")
@@ -71,6 +68,9 @@ class Detector(ABC):
     @abstractmethod
     def detect(image_pil: Image) -> Tuple[str, List[Point]]:
         pass
+
+    def __init__(self):
+        self._font = ImageFont.truetype("Montserrat-Regular.ttf", 10)
 
 
 class PyZBarDetector(Detector):
