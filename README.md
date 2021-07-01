@@ -18,7 +18,10 @@ When you start the example, it will create an HTTP server which you can connect 
 
 Once you click `Start` the browser will send the video from its webcam to the server.
 
-The server will send the received video back to the browser and optionally applying a transform to it.
+The server will send the received video back to the browser and optionally applying one of the following two transformations to it:
+
+- a visualisation of a detected and decoded QR code or
+- the replacement of a detected QR code by another image
 
 In parallel to the video stream, the browser sends a "ping" message over the data channel, and the server replies with "pong".
 
