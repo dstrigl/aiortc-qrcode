@@ -27,7 +27,7 @@ In parallel to the video stream, the browser sends a "ping" message over the dat
 
 ## Note
 
-It should be noted that this example only works when using HTTPS.
+It should be noted that video processing part of this example only works when using HTTPS.
 
 ## Credits
 
