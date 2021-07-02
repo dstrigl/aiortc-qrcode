@@ -10,7 +10,7 @@ First install the required packages:
   $ pip install -r requirements.tx
 ```
 
-When you start the example, it will create an HTTP server which you can connect to from your browser:
+When you start the example, it will create an HTTP(S) server which you can connect to from your browser:
 
 ```bash
   $ python server.py
